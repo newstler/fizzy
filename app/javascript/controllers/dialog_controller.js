@@ -6,7 +6,8 @@ export default class extends Controller {
   static values = {
     modal: { type: Boolean, default: false },
     sizing: { type: Boolean, default: true },
-    autoOpen: { type: Boolean, default: false }
+    autoOpen: { type: Boolean, default: false },
+    autofocus: { type: Boolean, default: true }
   }
 
   connect() {
@@ -26,6 +27,7 @@ export default class extends Controller {
 
     this.loadLazyFrames()
     this.dialogTarget.setAttribute("aria-hidden", "false")
+    if (!this.autofocusValue) document.activeElement?.blur()
     this.dispatch("show")
   }
 
