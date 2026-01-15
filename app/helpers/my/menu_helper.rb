@@ -5,7 +5,7 @@ module My::MenuHelper
       role: "combobox",
       placeholder: "Type to jump to a board, person, place, or tag…",
       class: "input input--transparent txt-small",
-      autofocus: false,
+      autofocus: true,
       autocorrect: "off",
       autocomplete: "off",
       aria: { activedescendant: "" },

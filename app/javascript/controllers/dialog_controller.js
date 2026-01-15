@@ -6,8 +6,7 @@ export default class extends Controller {
   static values = {
     modal: { type: Boolean, default: false },
     sizing: { type: Boolean, default: true },
-    autoOpen: { type: Boolean, default: false },
-    autofocus: { type: Boolean, default: true }
+    autoOpen: { type: Boolean, default: false }
   }
 
   connect() {
@@ -27,8 +26,12 @@ export default class extends Controller {
 
     this.loadLazyFrames()
     this.dialogTarget.setAttribute("aria-hidden", "false")
-    if (!this.autofocusValue) document.activeElement?.blur()
+    if (this.#isTouchDevice()) document.activeElement?.blur()
     this.dispatch("show")
+  }
+
+  #isTouchDevice() {
+    return "ontouchstart" in window || navigator.maxTouchPoints > 0
   }
 
   toggle() {
