@@ -53,7 +53,7 @@ module My::MenuHelper
 
   def my_menu_item(item, record)
     tag.li(class: "popup__item", data: { filter_target: "item", navigable_list_target: "item", id: "filter-#{item}-#{record.id}" }) do
-      icon_tag(item, class: "popup__icon") + yield
+      item == "board" ? yield : icon_tag(item, class: "popup__icon") + yield
     end
   end
 

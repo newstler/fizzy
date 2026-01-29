@@ -64,3 +64,5 @@ group :test do
   gem "vcr"
   gem "mocha"
 end
+
+gem "tidewave", "~> 0.4.1"
