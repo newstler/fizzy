@@ -55,6 +55,7 @@ end
 
 group :development do
   gem "web-console"
+  gem "tidewave", "~> 0.4.1"
 end
 
 group :test do
@@ -64,5 +65,3 @@ group :test do
   gem "vcr"
   gem "mocha"
 end
-
-gem "tidewave", "~> 0.4.1"
